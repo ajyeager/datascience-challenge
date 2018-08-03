@@ -20,8 +20,11 @@ We realize these (particularly task 2), are difficult problems.  Additionally, w
 
 ## Deliverables
 - Code / notebooks representing the work done to train and evaluate the models
-- Research Notebook
-	- Logs about changes made, experiments run, thoughts and ideas related to the project
+- Research Notebook (Logs)
+	- Progress reports
+	- Thoughts on the problem
+	- Experiments and takeaways from them
+	- etc...
 - Summary Document Containing:
 	- Explanation of the project - definition, metrics, results
 	- Explanation of the final approach taken
