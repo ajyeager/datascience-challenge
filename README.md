@@ -33,5 +33,6 @@ We realize these (particularly task 2), are difficult problems.  Additionally, w
 
 ## Logistics
 
- - Please use Python - but make use of any libraries you like
+ - Please use Python- but make use of any libraries you like (document anything non-standard)
  - You can use additional datasets if you like
+ - You can commit your progress directly to this repository
