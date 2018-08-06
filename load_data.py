@@ -1,5 +1,6 @@
 from collections import defaultdict
 from sklearn import model_selection
+import math
 
 
 def train_test_split(reviews):
@@ -8,9 +9,16 @@ def train_test_split(reviews):
 
 
 def reviews_by_star(train):
-    reviews_by_star = defaultdict(list)
+    reviews_by_rating = defaultdict(list)
     for review in train:
         rating = review['stars']
         text = review['text']
-        reviews_by_star[rating].append(text)
-    return reviews_by_star
+        reviews_by_rating[rating].append(text)
+    return reviews_by_rating
+
+def evaluate_test(test, predictor):
+    predictions = []
+    rmse = 0.0
+    for review in test:
+        predicted = predictor(review['text'])
+        rmse += math.pow(predicted - review['stars'], 2)
