@@ -16,6 +16,23 @@ def reviews_by_star(train):
         reviews_by_rating[rating].append(text)
     return reviews_by_rating
 
+
+def preprocess(text):
+    text = text.lower()
+
+def preprocess_for_fasttext(dataset, outname):
+    outfile = open(outname, 'w')
+    lines = 0
+    for review in dataset:
+        rating = review['stars']
+        text = preprocess(review['text'])
+        # fast text expects the label formatted as __label__1 for label 1
+        annotated_line = "__label__%s %s\n" % (rating, text)
+        outfile.write(annotated_line)
+        lines += 1
+    print("%s lines written to %s" % (lines, outname))
+    outfile.close()
+
 def evaluate_test(test, predictor):
     predictions = []
     rmse = 0.0
